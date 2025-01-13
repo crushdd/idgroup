@@ -59,5 +59,22 @@ client.on('ready', async () => {
     }
 });
 
+// Lidar com as mensagens recebidas no WhatsApp
+client.on('message', async (message) => {
+    console.log('Mensagem recebida:', message.body);
+
+    // Verificar se a mensagem é a opção 7
+    if (message.body === '7') {
+        const contact = await message.getContact();
+        const contactName = contact.pushname || contact.number;
+        const notifyNumber = '5538991075879@c.us'; // Número para notificação (formato internacional)
+
+        // Enviar mensagem para o número específico
+        const notifyMessage = `Um cliente solicitou atendimento: ${contactName} (${message.from})`;
+        await client.sendMessage(notifyNumber, notifyMessage);
+        console.log(`Mensagem de notificação enviada para ${notifyNumber}`);
+    }
+});
+
 // Inicializar cliente WhatsApp
 client.initialize();
