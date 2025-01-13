@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer-core');
 const { Client, LocalAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
+const fs = require('fs');
 
 // Configuração do WhatsApp Web
 const client = new Client({
@@ -33,9 +34,11 @@ client.on('ready', async () => {
 
     // Listar os grupos e seus IDs
     console.log('Grupos disponíveis:');
-    groups.forEach(group => {
-        console.log(`Nome: ${group.name}, ID: ${group.id._serialized}`);
-    });
+    const ids = groups.map(group => `Nome: ${group.name}, ID: ${group.id._serialized}`).join('\n');
+    console.log(ids);
+
+    // Escrever os IDs no arquivo ids.txt
+    fs.writeFileSync('ids.txt', ids, 'utf8');
 });
 
 // Inicializar cliente WhatsApp
