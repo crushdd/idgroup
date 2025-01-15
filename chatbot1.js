@@ -91,7 +91,7 @@ client.on('qr', (qr) => {
 
 // Após a conexão bem-sucedida
 client.on('ready', () => {
-    console.log('Tudo certo! WhatsApp conectado.');
+    console.log('Tudo certo! WhatsApp julio conectado.');
 });
 
 // Lidar com as mensagens recebidas no WhatsApp
