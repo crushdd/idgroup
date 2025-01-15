@@ -86,7 +86,7 @@ async function deleteFile(filePath) {
 // Gerar o QR Code para autenticação
 client.on('qr', (qr) => {
     qrcode.generate(qr, { small: true });
-    console.log('Escaneie o QR Code acima!');
+    console.log('Escaneie o QR Code acima do bot emelly!');
 });
 
 // Após a conexão bem-sucedida
