@@ -6,8 +6,8 @@ const axios = require('axios');
 const path = require('path');
 
 // Caminhos para os arquivos JSON que armazenarão as datas dos testes
-const BOTjulio-androidTestDatesFilePath = path.join(__dirname, 'BOTjulio-androidTestDates.json');
-const BOTjulio-iphoneTestDatesFilePath = path.join(__dirname, 'BOTjulio-iphoneTestDates.json');
+const julioandroidTestDatesFilePath = path.join(__dirname, 'julioandroidTestDates.json');
+const julioiphoneTestDatesFilePath = path.join(__dirname, 'julioiphoneTestDates.json');
 
 // Função para carregar as datas dos testes do arquivo JSON
 function loadTestDates(filePath) {
@@ -24,8 +24,8 @@ function saveTestDates(filePath, testDates) {
 }
 
 // Carregar as datas dos testes ao iniciar o script
-let BOTjulio-androidTestDates = loadTestDates(BOTjulio-androidTestDatesFilePath);
-let BOTjulio-iphoneTestDates = loadTestDates(BOTjulio-iphoneTestDatesFilePath);
+let julioandroidTestDates = loadTestDates(julioandroidTestDatesFilePath);
+let julioiphoneTestDates = loadTestDates(julioiphoneTestDatesFilePath);
 
 // Função para verificar se o usuário pode realizar um novo teste
 function canUserTest(userId, testDates) {
@@ -189,7 +189,7 @@ client.on('message', async (message) => {
             );
             break;
         case '3':
-            if (!canUserTest(message.from, BOTjulio-androidTestDates)) {
+            if (!canUserTest(message.from, julioandroidTestDates)) {
                 await simulateTyping(chat, 2000);
                 await client.sendMessage(
                     message.from,
@@ -197,7 +197,7 @@ client.on('message', async (message) => {
                 );
                 break;
             }
-            registerUserTest(message.from, BOTjulio-androidTestDates, BOTjulio-androidTestDatesFilePath);
+            registerUserTest(message.from, julioandroidTestDates, julioandroidTestDatesFilePath);
 
             await simulateTyping(chat, 3600);
             await client.sendMessage(
@@ -223,7 +223,7 @@ client.on('message', async (message) => {
 
             break;
             case '4':
-                if (!canUserTest(message.from, BOTjulio-iphoneTestDates)) {
+                if (!canUserTest(message.from, julioiphoneTestDates)) {
                     await simulateTyping(chat, 2000);
                     await client.sendMessage(
                         message.from,
@@ -276,7 +276,7 @@ client.on('message', async (message) => {
             
                     if (userReply.includes('vivo') && userReply.includes('iphone')) {
                         // Registrar data somente se a operadora for válida
-                        registerUserTest(message.from, BOTjulio-iphoneTestDates, BOTjulio-iphoneTestDatesFilePath);
+                        registerUserTest(message.from, julioiphoneTestDates, julioiphoneTestDatesFilePath);
                         await sendFileAndVideo(
                             'Vivo',
                             'https://drive.google.com/uc?export=download&id=13MwtPe-RbpSMK9v4bymtOPU3hwvSShSe',
@@ -286,7 +286,7 @@ client.on('message', async (message) => {
                         );
                     } else if (userReply.includes('tim') && userReply.includes('iphone')) {
                         // Registrar data somente se a operadora for válida
-                        registerUserTest(message.from, BOTjulio-iphoneTestDates, BOTjulio-iphoneTestDatesFilePath);
+                        registerUserTest(message.from, julioiphoneTestDates, julioiphoneTestDatesFilePath);
                         await sendFileAndVideo(
                             'TIM',
                             'https://drive.google.com/uc?export=download&id=1DNy7OkGCTxf6g6dPUNMP7Vs3zUj4FpeM',
