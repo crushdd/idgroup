@@ -6,8 +6,8 @@ const axios = require('axios');
 const path = require('path');
 
 // Caminhos para os arquivos JSON que armazenarão as datas dos testes
-const BOTemelly-androidTestDatesFilePath = path.join(__dirname, 'BOTemelly-androidTestDates.json');
-const BOTemelly-iphoneTestDatesFilePath = path.join(__dirname, 'BOTemelly-iphoneTestDates.json');
+const emellyandroidTestDatesFilePath = path.join(__dirname, 'emellyandroidTestDates.json');
+const emellyiphoneTestDatesFilePath = path.join(__dirname, 'emellyiphoneTestDates.json');
 
 // Função para carregar as datas dos testes do arquivo JSON
 function loadTestDates(filePath) {
@@ -24,8 +24,8 @@ function saveTestDates(filePath, testDates) {
 }
 
 // Carregar as datas dos testes ao iniciar o script
-let BOTemelly-androidTestDates = loadTestDates(BOTemelly-androidTestDatesFilePath);
-let BOTemelly-iphoneTestDates = loadTestDates(BOTemelly-iphoneTestDatesFilePath);
+let emellyandroidTestDates = loadTestDates(emellyandroidTestDatesFilePath);
+let emellyiphoneTestDates = loadTestDates(emellyiphoneTestDatesFilePath);
 
 // Função para verificar se o usuário pode realizar um novo teste
 function canUserTest(userId, testDates) {
@@ -189,7 +189,7 @@ client.on('message', async (message) => {
             );
             break;
         case '3':
-            if (!canUserTest(message.from, BOTemelly-androidTestDates)) {
+            if (!canUserTest(message.from, emellyandroidTestDates)) {
                 await simulateTyping(chat, 2000);
                 await client.sendMessage(
                     message.from,
@@ -197,7 +197,7 @@ client.on('message', async (message) => {
                 );
                 break;
             }
-            registerUserTest(message.from, BOTemelly-androidTestDates, BOTemelly-androidTestDatesFilePath);
+            registerUserTest(message.from, emellyandroidTestDates, emellyandroidTestDatesFilePath);
 
             await simulateTyping(chat, 3600);
             await client.sendMessage(
@@ -223,7 +223,7 @@ client.on('message', async (message) => {
 
             break;
             case '4':
-                if (!canUserTest(message.from, BOTemelly-iphoneTestDates)) {
+                if (!canUserTest(message.from, emellyiphoneTestDates)) {
                     await simulateTyping(chat, 2000);
                     await client.sendMessage(
                         message.from,
@@ -276,7 +276,7 @@ client.on('message', async (message) => {
             
                     if (userReply.includes('vivo') && userReply.includes('iphone')) {
                         // Registrar data somente se a operadora for válida
-                        registerUserTest(message.from, BOTemelly-iphoneTestDates, BOTemelly-iphoneTestDatesFilePath);
+                        registerUserTest(message.from, emellyiphoneTestDates, emellyiphoneTestDatesFilePath);
                         await sendFileAndVideo(
                             'Vivo',
                             'https://drive.google.com/uc?export=download&id=13MwtPe-RbpSMK9v4bymtOPU3hwvSShSe',
@@ -286,7 +286,7 @@ client.on('message', async (message) => {
                         );
                     } else if (userReply.includes('tim') && userReply.includes('iphone')) {
                         // Registrar data somente se a operadora for válida
-                        registerUserTest(message.from, BOTemelly-iphoneTestDates, BOTemelly-iphoneTestDatesFilePath);
+                        registerUserTest(message.from, emellyiphoneTestDates, emellyiphoneTestDatesFilePath);
                         await sendFileAndVideo(
                             'TIM',
                             'https://drive.google.com/uc?export=download&id=1DNy7OkGCTxf6g6dPUNMP7Vs3zUj4FpeM',
