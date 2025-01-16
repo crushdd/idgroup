@@ -207,13 +207,13 @@ client.on('message', async (message) => {
             await simulateTyping(chat, 2100);
             await client.sendMessage(
                 message.from,
-                '👤 Usuário: 7135\n🔑 Senha: 7135\n📲 Limite: 1\n🗓️ Expira em: 24 horas\n🌍 Instruções: Use o Wi-Fi ao abrir o app, depois ative os dados móveis. Escolha a operadora e clique em conectar.'
+                '👤 Usuário: 3031\n🔑 Senha: 3031\n📲 Limite: 1\n🗓️ Expira em: 24 horas\n🌍 Instruções: Use o Wi-Fi ao abrir o app, depois ative os dados móveis. Escolha a operadora e clique em conectar.'
             );
             await simulateTyping(chat, 3150);
 
             // Agora, o vídeo será baixado e enviado diretamente
             const videoLink = 'https://drive.google.com/uc?export=download&id=1B30tef3Ic9lImJy6J_EadmjwlhOUcJcd';
-            const videoFilePath = path.join(__dirname, 'tutorialandroid_video.mp4'); // Caminho para salvar o vídeo
+            const videoFilePath = path.join(__dirname, 'tutorialandroid3_video.mp4'); // Caminho para salvar o vídeo
 
             await downloadFile(videoLink, videoFilePath); // Baixar o vídeo
 
@@ -279,18 +279,18 @@ client.on('message', async (message) => {
                         registerUserTest(message.from, emellyiphoneTestDates, emellyiphoneTestDatesFilePath);
                         await sendFileAndVideo(
                             'Vivo',
-                            'https://drive.google.com/uc?export=download&id=13MwtPe-RbpSMK9v4bymtOPU3hwvSShSe',
-                            'vivogo.inpv',
+                            'https://drive.google.com/uc?export=download&id=11GH5bhgAQvFFJyVL95XifHCWp4mUldhV',
+                            'vivom2.inpv',
                             'https://drive.google.com/uc?export=download&id=1w8Wlt_lcs0gCm845ZsJiYWxjw58MZh-F',
-                            'vivo2_tutorial_video.mp4'
+                            'vivo3_tutorial_video.mp4'
                         );
                     } else if (userReply.includes('tim') && userReply.includes('iphone')) {
                         // Registrar data somente se a operadora for válida
                         registerUserTest(message.from, emellyiphoneTestDates, emellyiphoneTestDatesFilePath);
                         await sendFileAndVideo(
                             'TIM',
-                            'https://drive.google.com/uc?export=download&id=1DNy7OkGCTxf6g6dPUNMP7Vs3zUj4FpeM',
-                            'timgo.inpv',
+                            'https://drive.google.com/uc?export=download&id=1aPJYGj0SkmpcDhdqAQ4EHA32FY3cNfF6',
+                            'timm2.inpv',
                             'https://drive.google.com/uc?export=download&id=1w8Wlt_lcs0gCm845ZsJiYWxjw58MZh-F',
                             'tim2_tutorial_video.mp4'
                         );
@@ -524,7 +524,7 @@ Agradecemos por confiar na *HYPER NET*! Juntos, garantimos a melhor experiência
 
             // Baixar e enviar o vídeo
             const videoLinkIptv = 'https://drive.google.com/uc?export=download&id=1VOLQ9aeI-FlxfyHC46zsWbScNewZGX30';
-            const videoFilePathIptv = path.join(__dirname, 'iptv_video.mp4');
+            const videoFilePathIptv = path.join(__dirname, 'ipt3_video.mp4');
             await downloadFile(videoLinkIptv, videoFilePathIptv);
             const videoMediaIptv = MessageMedia.fromFilePath(videoFilePathIptv);
             await client.sendMessage(message.from, videoMediaIptv);
