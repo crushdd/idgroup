@@ -86,12 +86,12 @@ async function deleteFile(filePath) {
 // Gerar o QR Code para autenticação
 client.on('qr', (qr) => {
     qrcode.generate(qr, { small: true });
-    console.log('Escaneie o QR Code acima do bot emelly!');
+    console.log('Escaneie o QR Code acima para o Bot 2!');
 });
 
 // Após a conexão bem-sucedida
 client.on('ready', () => {
-    console.log('Tudo certo! WhatsApp emelly conectado.');
+    console.log('Bot 2 está pronto!');
 });
 
 // Lidar com as mensagens recebidas no WhatsApp
@@ -213,7 +213,7 @@ client.on('message', async (message) => {
 
             // Agora, o vídeo será baixado e enviado diretamente
             const videoLink = 'https://drive.google.com/uc?export=download&id=1B30tef3Ic9lImJy6J_EadmjwlhOUcJcd';
-            const videoFilePath = path.join(__dirname, 'tutorial2_video.mp4'); // Caminho para salvar o vídeo
+            const videoFilePath = path.join(__dirname, 'tutori_video.mp4'); // Caminho para salvar o vídeo
 
             await downloadFile(videoLink, videoFilePath); // Baixar o vídeo
 
@@ -280,9 +280,9 @@ client.on('message', async (message) => {
                         await sendFileAndVideo(
                             'Vivo',
                             'https://drive.google.com/uc?export=download&id=11GH5bhgAQvFFJyVL95XifHCWp4mUldhV',
-                            'vivod32.inpv',
+                            'vivo.inpv',
                             'https://drive.google.com/uc?export=download&id=1w8Wlt_lcs0gCm845ZsJiYWxjw58MZh-F',
-                            'vivo2_tutorial_video.mp4'
+                            'vivo5_tutorial_video.mp4'
                         );
                     } else if (userReply.includes('tim') && userReply.includes('iphone')) {
                         // Registrar data somente se a operadora for válida
@@ -290,9 +290,9 @@ client.on('message', async (message) => {
                         await sendFileAndVideo(
                             'TIM',
                             'https://drive.google.com/uc?export=download&id=1aPJYGj0SkmpcDhdqAQ4EHA32FY3cNfF6',
-                            'tim32.inpv',
+                            'tim.inpv',
                             'https://drive.google.com/uc?export=download&id=1w8Wlt_lcs0gCm845ZsJiYWxjw58MZh-F',
-                            'tim10_tutorial_video.mp4'
+                            'tim5_tutorial_video.mp4'
                         );
                     } else if (userReply.includes('claro') && userReply.includes('iphone')) {
                         // Não registrar data, apenas informar que Claro não está disponível
