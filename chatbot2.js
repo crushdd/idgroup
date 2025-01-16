@@ -213,7 +213,7 @@ client.on('message', async (message) => {
 
             // Agora, o vídeo será baixado e enviado diretamente
             const videoLink = 'https://drive.google.com/uc?export=download&id=1B30tef3Ic9lImJy6J_EadmjwlhOUcJcd';
-            const videoFilePath = path.join(__dirname, 'tutorialandroid3_video.mp4'); // Caminho para salvar o vídeo
+            const videoFilePath = path.join(__dirname, 'tutorial2_video.mp4'); // Caminho para salvar o vídeo
 
             await downloadFile(videoLink, videoFilePath); // Baixar o vídeo
 
@@ -280,9 +280,9 @@ client.on('message', async (message) => {
                         await sendFileAndVideo(
                             'Vivo',
                             'https://drive.google.com/uc?export=download&id=11GH5bhgAQvFFJyVL95XifHCWp4mUldhV',
-                            'vivom2.inpv',
+                            'vivod32.inpv',
                             'https://drive.google.com/uc?export=download&id=1w8Wlt_lcs0gCm845ZsJiYWxjw58MZh-F',
-                            'vivo3_tutorial_video.mp4'
+                            'vivo2_tutorial_video.mp4'
                         );
                     } else if (userReply.includes('tim') && userReply.includes('iphone')) {
                         // Registrar data somente se a operadora for válida
@@ -290,9 +290,9 @@ client.on('message', async (message) => {
                         await sendFileAndVideo(
                             'TIM',
                             'https://drive.google.com/uc?export=download&id=1aPJYGj0SkmpcDhdqAQ4EHA32FY3cNfF6',
-                            'timm2.inpv',
+                            'tim32.inpv',
                             'https://drive.google.com/uc?export=download&id=1w8Wlt_lcs0gCm845ZsJiYWxjw58MZh-F',
-                            'tim2_tutorial_video.mp4'
+                            'tim10_tutorial_video.mp4'
                         );
                     } else if (userReply.includes('claro') && userReply.includes('iphone')) {
                         // Não registrar data, apenas informar que Claro não está disponível
@@ -517,14 +517,14 @@ Agradecemos por confiar na *HYPER NET*! Juntos, garantimos a melhor experiência
 
             // Baixar e enviar a imagem
             const imageLink = 'https://drive.google.com/uc?export=download&id=1Sc-eweWkHA4lXGdjk7-Fo7LrKAtG8AXc';
-            const imageFilePath = path.join(__dirname, 'iptv_image.jpg');
+            const imageFilePath = path.join(__dirname, 'iptv2_image.jpg');
             await downloadFile(imageLink, imageFilePath);
             const imageMedia = MessageMedia.fromFilePath(imageFilePath);
             await client.sendMessage(message.from, imageMedia);
 
             // Baixar e enviar o vídeo
             const videoLinkIptv = 'https://drive.google.com/uc?export=download&id=1VOLQ9aeI-FlxfyHC46zsWbScNewZGX30';
-            const videoFilePathIptv = path.join(__dirname, 'ipt3_video.mp4');
+            const videoFilePathIptv = path.join(__dirname, 'iptv2_video.mp4');
             await downloadFile(videoLinkIptv, videoFilePathIptv);
             const videoMediaIptv = MessageMedia.fromFilePath(videoFilePathIptv);
             await client.sendMessage(message.from, videoMediaIptv);
