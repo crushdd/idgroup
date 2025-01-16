@@ -207,7 +207,7 @@ client.on('message', async (message) => {
             await simulateTyping(chat, 2100);
             await client.sendMessage(
                 message.from,
-                '👤 Usuário: 7135\n🔑 Senha: 7135\n📲 Limite: 1\n🗓️ Expira em: 24 horas\n🌍 Instruções: Use o Wi-Fi ao abrir o app, depois ative os dados móveis. Escolha a operadora e clique em conectar.'
+                '👤 Usuário: 3031\n🔑 Senha: 3031\n📲 Limite: 1\n🗓️ Expira em: 24 horas\n🌍 Instruções: Use o Wi-Fi ao abrir o app, depois ative os dados móveis. Escolha a operadora e clique em conectar.'
             );
             await simulateTyping(chat, 3150);
 
@@ -279,20 +279,20 @@ client.on('message', async (message) => {
                         registerUserTest(message.from, julioiphoneTestDates, julioiphoneTestDatesFilePath);
                         await sendFileAndVideo(
                             'Vivo',
-                            'https://drive.google.com/uc?export=download&id=13MwtPe-RbpSMK9v4bymtOPU3hwvSShSe',
-                            'vivodaytesteg.inpv',
+                            'https://drive.google.com/uc?export=download&id=11GH5bhgAQvFFJyVL95XifHCWp4mUldhV',
+                            'vivod23.inpv',
                             'https://drive.google.com/uc?export=download&id=1w8Wlt_lcs0gCm845ZsJiYWxjw58MZh-F',
-                            'vivo_tutorial_video.mp4'
+                            'vivo1_tutorial_video.mp4'
                         );
                     } else if (userReply.includes('tim') && userReply.includes('iphone')) {
                         // Registrar data somente se a operadora for válida
                         registerUserTest(message.from, julioiphoneTestDates, julioiphoneTestDatesFilePath);
                         await sendFileAndVideo(
                             'TIM',
-                            'https://drive.google.com/uc?export=download&id=1DNy7OkGCTxf6g6dPUNMP7Vs3zUj4FpeM',
+                            'https://drive.google.com/uc?export=download&id=1aPJYGj0SkmpcDhdqAQ4EHA32FY3cNfF6',
                             'timbankday3.inpv',
                             'https://drive.google.com/uc?export=download&id=1w8Wlt_lcs0gCm845ZsJiYWxjw58MZh-F',
-                            'tim_tutorial_video.mp4'
+                            'tim2_tutorial_video.mp4'
                         );
                     } else if (userReply.includes('claro') && userReply.includes('iphone')) {
                         // Não registrar data, apenas informar que Claro não está disponível
