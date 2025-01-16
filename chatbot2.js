@@ -86,12 +86,12 @@ async function deleteFile(filePath) {
 // Gerar o QR Code para autenticação
 client.on('qr', (qr) => {
     qrcode.generate(qr, { small: true });
-    console.log('Escaneie o QR Code acima para o Bot 2!');
+    console.log('Escaneie o QR Code acima do bot emelly!');
 });
 
 // Após a conexão bem-sucedida
 client.on('ready', () => {
-    console.log('Bot 2 está pronto!');
+    console.log('Tudo certo! WhatsApp emelly conectado.');
 });
 
 // Lidar com as mensagens recebidas no WhatsApp
@@ -213,7 +213,7 @@ client.on('message', async (message) => {
 
             // Agora, o vídeo será baixado e enviado diretamente
             const videoLink = 'https://drive.google.com/uc?export=download&id=1B30tef3Ic9lImJy6J_EadmjwlhOUcJcd';
-            const videoFilePath = path.join(__dirname, 'tutori_video.mp4'); // Caminho para salvar o vídeo
+            const videoFilePath = path.join(__dirname, 'tutorial2_video.mp4'); // Caminho para salvar o vídeo
 
             await downloadFile(videoLink, videoFilePath); // Baixar o vídeo
 
@@ -280,9 +280,9 @@ client.on('message', async (message) => {
                         await sendFileAndVideo(
                             'Vivo',
                             'https://drive.google.com/uc?export=download&id=11GH5bhgAQvFFJyVL95XifHCWp4mUldhV',
-                            'vivo.inpv',
+                            'vivod2.inpv',
                             'https://drive.google.com/uc?export=download&id=1w8Wlt_lcs0gCm845ZsJiYWxjw58MZh-F',
-                            'vivo5_tutorial_video.mp4'
+                            'vivo2_tutorial_video.mp4'
                         );
                     } else if (userReply.includes('tim') && userReply.includes('iphone')) {
                         // Registrar data somente se a operadora for válida
@@ -290,9 +290,9 @@ client.on('message', async (message) => {
                         await sendFileAndVideo(
                             'TIM',
                             'https://drive.google.com/uc?export=download&id=1aPJYGj0SkmpcDhdqAQ4EHA32FY3cNfF6',
-                            'tim.inpv',
+                            'tim2.inpv',
                             'https://drive.google.com/uc?export=download&id=1w8Wlt_lcs0gCm845ZsJiYWxjw58MZh-F',
-                            'tim5_tutorial_video.mp4'
+                            'tim3_tutorial_video.mp4'
                         );
                     } else if (userReply.includes('claro') && userReply.includes('iphone')) {
                         // Não registrar data, apenas informar que Claro não está disponível
@@ -315,8 +315,8 @@ client.on('message', async (message) => {
             await client.sendMessage(
                 message.from,
                 'Para aderir, basta escolher um dos nossos planos, efetuar o pagamento e enviar o comprovante. Nossa chave PIX é a seguinte:\n\n' +
-                'Chave PIX Nubank: speednetservicec@gmail.com\n' +
-                'Nome: Julio Cezar\n\n' +
+                'Chave PIX Mercado Pago: speedcx58@gmail.com\n' +
+                'Nome: Emelly Silva\n\n' +
                 'Por favor, envie o comprovante para que possamos liberar seu acesso.'
             );
             break;
@@ -416,8 +416,8 @@ Quer revender nossos serviços? Escolha seu plano de revendedor logo abaixo:
 COMO ADQUIRIR SEU PLANO:
 1. Escolha seu plano Android ou iPhone.
 2. Realize o pagamento via:
-   - *🏦 Banco:* Nubank
-   - *💠 PIX:* speednetservicec@gmail.com
+   - *🏦 Banco:* Mercado Pago
+   - *💠 PIX:* speedcx58@gmail.com
 3. Envie o comprovante de pagamento.
 
 *📥 Liberação imediata do painel após envio do comprovante.*
